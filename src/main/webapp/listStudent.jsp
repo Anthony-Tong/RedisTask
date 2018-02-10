@@ -20,6 +20,8 @@
     <script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 </head>
 <body>
+<div class="container" style="background: #ffffff; width: 500px; height: 450px; margin-top: 20px;">
+    <h3>学生信息</h3>
 <table class="table table-striped" style="width: 500px;align-content: center">
     <thead>
     <tr>
@@ -46,7 +48,9 @@
     </c:forEach>
     </tbody>
 </table>
-<ul class="pagination">
+
+<%--分页--%>
+<ul class="pagination" style=" margin: 0 20px;">
     <%--下一页--%>
     <c:choose>
         <c:when test="${pageBean.pc > 1}">
@@ -104,5 +108,6 @@
         </c:otherwise>
     </c:choose>
 </ul>
+</div>
 </body>
 </html>

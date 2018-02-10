@@ -28,11 +28,10 @@
     <link type="text/css" rel="stylesheet" href="jedate/skin/jedate.css">
 </head>
 <body style="background: #f9fbfb">
-<div class="container" style="background: #ffffff; width: 400px; height: 450px; margin-top: 50px;padding-top: 50px;">
+<div class="container" style="background: #ffffff; width: 400px; height: 450px; margin-top: 50px;padding-top: 30px;">
 
-    <c:choose>
-        <c:when test=""></c:when>
-    </c:choose>
+    <h4>添加/修改学生信息</h4>
+    <span style="color: tomato">${error}</span>
 
     <form action="${pageContext.request.contextPath}/add" method="post" accept-charset="utf-8">
         <input type="hidden" name="id" value="${student.id}">

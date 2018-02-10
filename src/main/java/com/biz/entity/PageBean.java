@@ -2,6 +2,11 @@ package com.biz.entity;
 
 import java.util.List;
 
+/**
+ * @author ChunjieTang
+ * @create 2018-02-08
+ * @param <T>
+ */
 public class PageBean<T> {
 	//pageCode，当前页码
 	private int pc;
