@@ -38,7 +38,7 @@
             <td>${stu.avgScore}</td>
             <td>${stu.description}</td>
             <td>
-                <a href="${pageContext.request.contextPath}/edit?id=${stu.id}">修改</a>|
+                <a href="${pageContext.request.contextPath}/load?id=${stu.id}">修改</a>|
                 <a href="${pageContext.request.contextPath}/del?id=${stu.id}">删除</a>
             </td>
         </tr>

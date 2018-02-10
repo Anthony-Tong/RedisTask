@@ -13,6 +13,23 @@
         <servlet-name>ListServlet</servlet-name>
         <servlet-class>com.biz.servlet.ListServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DelServlet</servlet-name>
+        <servlet-class>com.biz.servlet.DelServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoadServlet</servlet-name>
+        <servlet-class>com.biz.servlet.LoadServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LoadServlet</servlet-name>
+        <url-pattern>/load</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DelServlet</servlet-name>
+        <url-pattern>/del</url-pattern>
+    </servlet-mapping>
     <servlet-mapping>
         <servlet-name>ListServlet</servlet-name>
         <url-pattern>/list</url-pattern>

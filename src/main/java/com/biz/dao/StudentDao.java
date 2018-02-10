@@ -55,7 +55,15 @@ public class StudentDao {
     public int getCount() {
         Jedis jedis = RedisUtil.getJedis();
         long count = jedis.zcount("topicId", 0, 1000);
+        RedisUtil.closeRedis(jedis);
         return (int) count;
+    }
+
+    public String findById(String id){
+        Jedis jedis = RedisUtil.getJedis();
+        String stu = jedis.get("student:" + id);
+        RedisUtil.closeRedis(jedis);
+        return stu;
     }
 
 }

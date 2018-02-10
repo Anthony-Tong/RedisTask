@@ -2,6 +2,7 @@ package com.biz.servlet;
 
 import com.biz.dao.StudentDao;
 import com.biz.entity.Student;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -24,8 +25,10 @@ public class AddServlet extends HttpServlet {
         String birthday = request.getParameter("birthday");
         String description = request.getParameter("description");
         String avgScore = request.getParameter("avgScore");
-        String id = UUID.randomUUID().toString().replace("-", "");
-
+        String id = request.getParameter("id");
+        if (StringUtils.isEmpty(id)) {
+            id = UUID.randomUUID().toString().replace("-", "");
+        }
         try {
             Student student = new Student(id, name, birthday, description, Integer.parseInt(avgScore));
             dao.addOrUpdate(student);

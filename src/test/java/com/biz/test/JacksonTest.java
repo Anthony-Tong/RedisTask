@@ -68,4 +68,10 @@ public class JacksonTest {
     public void test6() throws Exception {
         System.out.println(UUID.randomUUID().toString().replace("-", ""));
     }
+    @Test
+    public void test7() throws Exception {
+        StudentDao dao = new StudentDao();
+        String byId = dao.findById("95");
+        System.out.println(byId);
+    }
 }
