@@ -33,7 +33,7 @@
     </tr>
     </thead>
     <tbody>
-    <c:forEach items="${pageBean.datas}" var="stu">
+    <c:forEach items="${pageBean.datas}" var="stu" >
         <tr>
             <td>${stu.name}</td>
             <td><fmt:formatDate pattern="yyyy-MM-dd" value="${stu.birthday}"/></td>
@@ -48,7 +48,7 @@
     </c:forEach>
     </tbody>
 </table>
-
+<a href="addStudent.jsp">添加学生</a>
 <%--分页--%>
 <ul class="pagination" style=" margin: 0 20px;">
     <%--下一页--%>

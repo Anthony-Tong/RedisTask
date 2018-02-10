@@ -74,4 +74,8 @@ public class JacksonTest {
         String byId = dao.findById("95");
         System.out.println(byId);
     }
+
+    public static void main(String[] args) {
+        System.out.println("aaa");
+    }
 }
