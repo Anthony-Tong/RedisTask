@@ -3,6 +3,8 @@ package com.biz.dao;
 import com.biz.entity.Student;
 import com.biz.utils.RedisUtil;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import redis.clients.jedis.Jedis;
 
 import java.util.ArrayList;
@@ -16,6 +18,7 @@ import java.util.Set;
  * @create 2018-02-08 12:37
  */
 public class StudentDao {
+    private static final Logger logger = LoggerFactory.getLogger(StudentDao.class);
 
     public void addOrUpdate(Student student) throws Exception {
         Jedis jedis = RedisUtil.getJedis();
@@ -35,7 +38,7 @@ public class StudentDao {
         RedisUtil.closeRedis(jedis);
     }
 
-    public List<String> getStu(int pageNO, int pageSize) {
+    public List<String> findAll(int pageNO, int pageSize) {
         List<String> students = new ArrayList<String>();
         Jedis jedis = RedisUtil.getJedis();
         int start = (pageNO - 1) * pageSize;
@@ -45,7 +48,14 @@ public class StudentDao {
             String stuJson = jedis.get(id);
             students.add(stuJson);
         }
+        RedisUtil.closeRedis(jedis);
         return students;
+    }
+
+    public int getCount() {
+        Jedis jedis = RedisUtil.getJedis();
+        long count = jedis.zcount("topicId", 0, 1000);
+        return (int) count;
     }
 
 }

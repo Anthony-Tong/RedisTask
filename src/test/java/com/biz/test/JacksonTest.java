@@ -52,7 +52,7 @@ public class JacksonTest {
     @Test
     public void test4() throws Exception {
         StudentDao dao = new StudentDao();
-        List<String> stus = dao.getStu(1, 5);
+        List<String> stus = dao.findAll(1, 5);
         for (String stu : stus) {
             System.out.println(stu);
         }
@@ -61,7 +61,7 @@ public class JacksonTest {
     @Test
     public void test5() throws Exception {
         StudentDao dao = new StudentDao();
-        dao.del("99");
+        dao.del("73aff9d7e6bc423e921c407ee2c6f56d");
     }
 
     @Test

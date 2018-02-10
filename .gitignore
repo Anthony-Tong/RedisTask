@@ -1,0 +1,16 @@
+### GitTemplate template
+.gitignore_global
+.gitignore
+rebel.xml
+.project
+.settings
+.classpath
+.mymetadata
+.myeclipse
+#datasource.properties
+.idea
+.DS_Store
+.svn
+*.iml
+target
+logs

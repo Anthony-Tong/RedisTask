@@ -2,6 +2,8 @@ package com.biz.servlet;
 
 import com.biz.dao.StudentDao;
 import com.biz.entity.Student;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +16,7 @@ import java.util.UUID;
  * @create 2018-02-08 15:35
  */
 public class AddServlet extends HttpServlet {
+    private static final Logger logger = LoggerFactory.getLogger(AddServlet.class);
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws javax.servlet.ServletException, IOException {
         StudentDao dao = new StudentDao();
@@ -28,7 +31,10 @@ public class AddServlet extends HttpServlet {
             dao.addOrUpdate(student);
         } catch (Exception e) {
             e.printStackTrace();
+            logger.error("添加失败");
         }
+
+        request.getRequestDispatcher("list").forward(request, response);
 
     }
 
