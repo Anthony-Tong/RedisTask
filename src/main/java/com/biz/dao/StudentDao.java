@@ -28,7 +28,9 @@ public class StudentDao {
         Jedis jedis = RedisUtil.getJedis();
         ObjectMapper mapper = new ObjectMapper();
         String stuJson = mapper.writeValueAsString(student);
+        // 存入到String类型中 key：student:+{id}   value:{stuJson}
         jedis.set(PREFIX + student.getId(), stuJson);
+        // 主要做排序功能   SortedSet（有序集合）
         jedis.zadd("topicId", student.getAvgScore(), PREFIX + student.getId());
 
         RedisUtil.closeRedis(jedis);

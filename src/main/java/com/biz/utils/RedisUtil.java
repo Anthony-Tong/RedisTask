@@ -12,9 +12,9 @@ import redis.clients.jedis.JedisPoolConfig;
  */
 public class RedisUtil {
     private static JedisPool pool;
-    private static final String REDIS_SERVER_URL = "120.79.93.139";
+    private static final String REDIS_SERVER_URL = "118.24.21.136";
     private static final int REDIS_SERVER_PORT = 6379;
-    private static final String REDIS_SERVER_PASSWORD = "123456";
+    private static final String REDIS_SERVER_PASSWORD = "jie123";
     private static final int POOL_TIMEOUT = 2000;
 
     public static JedisPool getPool() {
